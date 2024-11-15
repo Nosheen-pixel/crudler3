@@ -5,14 +5,13 @@ import Icons from "../UI/Icons";
 import { Button, ButtonTray } from "../UI/Button";
 
 const defaultModule = {
-  ModuleID: null, // Math.floor(100000 + Math.random() * 900000),
+  ModuleID: null,
   ModuleCode: null,
   ModuleName: null,
   ModuleLevel: null,
   ModuleLeaderID: null,
   ModuleLeaderName: null,
   ModuleImage: null,
-  // "https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg",
 };
 
 const ModuleAddScreen = ({ navigation, route }) => {
@@ -23,9 +22,11 @@ const ModuleAddScreen = ({ navigation, route }) => {
     "https://images.freeimages.com/images/small-previews/cf5/cellphone-1313194.jpg";
 
   //State.....
+
   const [module, setModule] = useState(defaultModule);
+
   //Handlers....
-  const handleAdd = () => onAdd(defaultModule);
+  const handleAdd = () => onAdd(module);
   const handleCancel = navigation.goBack;
 
   const handleChange = (field, value) =>
@@ -79,6 +80,10 @@ const ModuleAddScreen = ({ navigation, route }) => {
           style={styles.ItemTextInput}
         />
       </View>
+
+      <Text>
+        {module.ModuleCode} {module.ModuleName}
+      </Text>
       <ButtonTray>
         <Button label="Add" icon={<Icons.Add />} onClick={handleAdd} />
         <Button label="Cancel" icon={<Icons.Cancel />} onClick={handleCancel} />
