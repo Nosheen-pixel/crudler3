@@ -40,8 +40,7 @@ const ModuleListScreen = ({ navigation }) => {
     navigation.navigate("ModuleViewScreen", { module, onDelete });
   const gotoAddScreen = () => navigation.navigate("ModuleAddScreen", { onAdd });
 
-  // {if (item.ModuleID !== module.ModuleID) return true;
-  //else return false; });
+ 
 
   //view....
   return (
